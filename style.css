@@ -1,0 +1,56 @@
+
+/* Layout */
+
+.container {
+   border: 2px solid green;
+   display: flex; 
+   justify-content: center; 
+   align-items: center; 
+   padding: 1.5em;
+}
+
+.card-holder {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr); 
+    gap: 2em;
+    border: 2px solid magenta;  
+    max-width: 90%;
+  
+}
+
+.card {
+    width: 100px;
+    height: 125px;
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.game-stats {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.game-stats p {
+    margin: 0;
+}
+
+#points {
+    margin-bottom: 10px;
+}
+
+.card-holder p {
+    text-align: center;
+    visibility: hidden;
+}
+
+
