@@ -1,5 +1,7 @@
 # Find-n-Flip Game
 
+**Preview : ** https://cricketfan18.github.io/Find-n-Flip/#rule
+
 Welcome to **Find-n-Flip**, a fun and challenging memory game where your goal is to match pairs of cards! The game consists of a grid of face-down cards, each with a unique image or text. Your task is to flip over two cards at a time to reveal their faces, trying to find matching pairs. If the two cards match, they stay face-up; if not, they flip back over.
 
 ## How to Play
