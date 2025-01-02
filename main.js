@@ -27,18 +27,23 @@ function GameInit()
 }
 
 function CardClicked(card){
+    if (cardsClicked.includes(card) || card.classList.contains("flip")) {
+        return; // Prevent flipping the same card twice
+    }
     totalMoves++;
     movesEl.textContent = `Moves : ${totalMoves}`;
-    const p = card.firstElementChild;
     if(move < maxMove) {
-        p.style.visibility = "visible";
-        card.setAttribute("id","flip");
-        cardsClicked.push(p);
+        card.classList.add("flip");
+        setTimeout(()=>{
+            card.firstElementChild.style.visibility = "visible";
+        },500);        
+        cardsClicked.push(card);
         move++;
     } 
     if(move === 2) {
-        document.body.style.pointerEvents = "none";
-        if(cardsClicked[0].textContent === cardsClicked[1].textContent) {
+        document.body.style.pointerEvents = "none";      
+        
+        if(cardsClicked[0].firstElementChild.textContent === cardsClicked[1].firstElementChild.textContent) {
             points++;
             pointsEl.textContent = `Points : ${points}`;
             setTimeout(()=>{
@@ -47,8 +52,10 @@ function CardClicked(card){
         } else {
             setTimeout(()=> {
                 cardsClicked.forEach((cardClicked) => {
-                    cardClicked.style.visibility = "hidden";
-                    card.removeAttribute("id");
+                    cardClicked.classList.remove("flip");
+                    setTimeout(()=>{
+                        cardClicked.firstElementChild.style.visibility = "hidden";
+                    },400);                    
                 }); 
                 resetState();
             },2000);                            
