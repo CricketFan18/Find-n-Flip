@@ -25,6 +25,11 @@ h1 {
     text-underline-offset: 5px;
 }
 
+a:hover {
+    color: rgb(166, 164, 164);
+}
+
+
 .card p {
     color: #E3FEF7;
 }
@@ -51,10 +56,6 @@ h1 {
 
 header a {
     text-align: left;
-}
-
-header a:hover {
-    color: rgb(166, 164, 164);
 }
 
 header h1 {
