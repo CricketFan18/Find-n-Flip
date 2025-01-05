@@ -1,68 +1,77 @@
-
-
-
-
-
-
-
-
+:root {
+    --text: "Open Sans", serif;
+}
 
 /* General */
 
 html {
-    background-color: #E3FEF7;
     font-size: 10px;
 }
 
 body {
     margin: 0;
+    font-family: var(--text);
 }
 
 h1 {
     margin: 0;
     color: #003C43;
-}
-
-p {
-    padding: 2px;
-    margin: 0;
-    font-size: 1.75rem;
-    color: #003C43;
+    font-size: 3.5rem;
 }
 
 :is(a:any-link){
-    font-size: 2rem;
-    text-decoration: none;
-    color: #003C43;
+    font-size: 2.25rem;    
+    color: black;
+    text-underline-offset: 5px;
 }
-
-
 
 .card p {
     color: #E3FEF7;
 }
 
-/* Layout */
 
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin: 2em 0;
+/* SVG */
+
+.material-symbols-outlined {
+  position: relative;
+  top: 5px;
 }
 
+/* Layout */
+
+.header {
+    padding: 0 5em;
+    padding-bottom: 1em;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    margin-top: 1em;
+    border-bottom: 2px solid #003C43;
+}
+
+header a {
+    text-align: left;
+}
+
+header a:hover {
+    color: rgb(166, 164, 164);
+}
+
+header h1 {
+    text-align: center;
+}
 .container {
    display: flex; 
    justify-content: center; 
    align-items: center; 
-   margin-top: 3em;
-   margin-bottom: 200px;
+   margin: 3.5em 0;
 }
 
 .card-holder {
     display: grid;
     grid-template-columns: repeat(8, 1fr); 
-    gap: 3em;  
+    column-gap: 3.5em;
+    row-gap: 2em;
 }
 .card {
     width: 10rem;
@@ -73,24 +82,21 @@ header {
     cursor: pointer;
     background-color: #135D66;
     border-radius: 10%;
-    box-shadow: rgba(60, 64, 67, 0.3) 0 0.1rem 0.2rem 0px, rgba(60, 64, 67, 0.15) 0 0.2rem 0.6rem 0.2rem;
     transition-property: transform,background-color;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
     transition-timing-function: linear;
-    transition-delay: 0.15s;
+    transition-delay: 0.1s;
+}
+
+.card p {
+    padding: 2px;
+    margin: 0;
+    font-size: 1.8rem;
 }
 
 .flip {
     transform: rotateY(180deg) ;
     background-color: #77B0AA;
-}
-.game-stats {
-    display: flex;
-    flex-direction: column;    
-}
-
-#points {
-    margin-bottom: 1rem;
 }
 
 .card-holder p {
@@ -99,25 +105,42 @@ header {
     transform: rotateY(180deg);
 }
 
-h1 {
-    font-size: 3.5rem;
+.game-stats {
+    width: 250px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    border: 2px solid #003C43;
+    padding: 1em 0.5em;
+    background-color: #77B0AA;
+    box-shadow:  -2px 2px 5px #003C43;
+}
+
+.game-stats p {
+    color: #ffffff;
+    font-size: 2.25rem;
+    margin: 0;
 }
 
 #rule {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     align-items: center;
-    
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+    margin-bottom: 800px;
+    margin-top: 800px;
 }
 
 #rule h2{
-    font-size: 2.5rem;
+    font-size: 3rem;
 }
 
 #rule ul li {
-    font-size: 1.75rem;
-    margin-bottom: 1em;
+    font-size: 2rem;
+    margin-bottom: 0.75em;
 }
 
 @media (max-width: 400px) {
@@ -125,13 +148,28 @@ h1 {
         font-size: 7px;
     }
 
+    .header {
+        padding: 0 1em;
+        padding-bottom: 0.5em;
+    }
+
     .card-holder {
         grid-template-columns: repeat(4, 1fr); 
+        column-gap: 2.5em;
     }
 
     .card {
-        width: 7.5rem;
+        width: 8rem;
         height: 9rem;
+    }
+
+    .card p {
+        font-size: 1.5rem;
+    }
+
+    .game-stats {
+        width: 200px;
+        font-size: 2rem;
     }
 }
 
@@ -140,14 +178,38 @@ h1 {
         font-size: 8px;
     }
 
+    .material-symbols-outlined {
+        top: 7.5px;
+    }
+
+    .header {
+        padding: 0 1.5em;
+        padding-bottom: 0.75em;
+    }
+
+    .container {
+        margin-top: 3em;
+    }
+
     .card-holder {
         grid-template-columns: repeat(4, 1fr); 
+        column-gap: 3em;
     }
 
     .card {
-        width: 8rem;
+        width: 9rem;
         height: 10rem;
     } 
+
+    .card p {
+        font-size: 1.75rem;
+        font-weight: 500;
+    }
+
+    .game-stats {
+        width: 200px;
+        font-size: 2.5rem;
+    }
 }
 
 @media (min-width: 700px) and (max-width: 1100px) {
@@ -155,7 +217,29 @@ h1 {
         font-size: 9px;
     }
 
+    .material-symbols-outlined {
+        top: 7.5px;
+    }
+
+    .header {
+        padding-top: 0;
+        padding-bottom: 0.5em;
+    }
+
+    .container {
+        margin-top: 2.5em;
+    }
+
     .card-holder {
         grid-template-columns: repeat(6, 1fr); 
+    }
+
+    .card {
+        width: 10rem;
+        height: 11rem;
+    }
+
+    .card p {
+        font-weight: 500;
     }
 }

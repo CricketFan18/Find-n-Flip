@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flip-n-Find</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <a href="#rule">📢 Rules</a>
-        <h1>Flip-n-Find</h1>
-        <div class="game-stats">
-            <p id="points">Points : 0</p>
-            <p id="moves">Moves : 0</p>
-        </div>
+    <header class="header">
+        <a href="#rule"><span class="material-symbols-outlined">campaign </span>Rules</a>
+        <h1 id="main">Flip-n-Find</h1>
     </header>    
     <main class="container">
         <div class="card-holder">
@@ -43,6 +43,10 @@
             <div class="card"></div>
         </div>        
     </main>
+    <div class="game-stats">
+        <p id="points">Points : 0</p>
+        <p id="moves">Moves : 0</p>
+    </div>
     <div id="rule">
         <h2>Rules</h2>
         <ul>
@@ -51,6 +55,7 @@
             <li>Continue flipping cards until all pairs are found!</li>
             <li>The game is over when you successfully match all the pairs.</li>              
         </ul>
+        <a href="#main">Back To Game<span class="material-symbols-outlined">undo</span></a>
     </div>
     <script src="main.js"></script>
 </body>

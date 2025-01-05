@@ -36,7 +36,7 @@ function CardClicked(card){
         card.classList.add("flip");
         setTimeout(()=>{
             card.firstElementChild.style.visibility = "visible";
-        },500);        
+        },200);        
         cardsClicked.push(card);
         move++;
     } 
@@ -55,10 +55,10 @@ function CardClicked(card){
                     cardClicked.classList.remove("flip");
                     setTimeout(()=>{
                         cardClicked.firstElementChild.style.visibility = "hidden";
-                    },400);                    
+                    },150);                    
                 }); 
                 resetState();
-            },2000);                            
+            },1000);                            
         }      
     } 
 }
