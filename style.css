@@ -102,7 +102,6 @@ header h1 {
 
 .card-holder p {
     text-align: center;
-    visibility: hidden;
     transform: rotateY(180deg);
 }
 
